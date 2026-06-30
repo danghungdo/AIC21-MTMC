@@ -1,0 +1,11 @@
+# S02 MOT config for the ORIGINAL (leaked) model run. DATA_DIR isolated as detect_merge_s02_m2.
+CHALLENGE_DATA_DIR: '/home/likef/workspace/city-flow-raw/cityflow-raw-data/validation-002/validation/'
+DET_SOURCE_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detection/images/test/S02/'
+DATA_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detect_merge_s02_m2/'
+REID_SIZE_TEST: [384, 384]
+ROI_DIR: '/home/likef/workspace/city-flow-raw/cityflow-raw-data/validation-002/validation/S02/'
+CID_BIAS_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/cam_timestamp/'
+USE_RERANK: True
+USE_FF: True
+SCORE_THR: 0.1
+MCMT_OUTPUT_TXT: 'track_s02_m2.txt'

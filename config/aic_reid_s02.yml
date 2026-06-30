@@ -1,0 +1,7 @@
+# S02 ReID feature extraction with the leak-free retrained model (S02 held out of training).
+DET_SOURCE_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detection/images/test/S02/'
+REID_MODEL: 'reid_model/resnet101_ibn_a_80.pth'
+REID_BACKBONE: 'resnet101_ibn_a'
+DET_IMG_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detect_merge_s02/'
+DATA_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detect_reid1_s02/'
+REID_SIZE_TEST: [384, 384]

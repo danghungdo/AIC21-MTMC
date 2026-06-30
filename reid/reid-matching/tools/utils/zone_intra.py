@@ -372,7 +372,7 @@ class zone():
                 sim_matrix[id2index[t2id],id2index[t1id]] = np.matmul(t1_feat, t2_feat)
         sim_matrix = 1-sim_matrix
         cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=0.7,
-                                                 affinity='precomputed',
+                                                 metric='precomputed',
                                                  linkage='complete').fit_predict(sim_matrix)
         new_zone_dict = dict()
         label2id = dict()

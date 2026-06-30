@@ -102,7 +102,7 @@ def get_labels(_cfg, cid_tid_dict, cid_tids, score_thr):
                 0.7,0.5,0.5,0.5,0.5]
     for i,sub_c_to_c in enumerate(sub_cid_tids):
         sim_matrix = get_sim_matrix(_cfg,cid_tid_dict,sub_cid_tids[sub_c_to_c])
-        cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-dis_thrs[i], affinity='precomputed',
+        cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-dis_thrs[i], metric='precomputed',
                                 linkage='complete').fit_predict(1 - sim_matrix)
         labels = get_match(cluster_labels)
         cluster_cid_tids = get_cid_tid(labels,sub_cid_tids[sub_c_to_c])
@@ -116,7 +116,7 @@ def get_labels(_cfg, cid_tid_dict, cid_tids, score_thr):
     sub_labels = dict()
     for i,sub_c_to_c in enumerate(sub_cid_tids):
         sim_matrix = get_sim_matrix(_cfg,cid_tid_dict_new,sub_cid_tids[sub_c_to_c])
-        cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-0.1, affinity='precomputed',
+        cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-0.1, metric='precomputed',
                                 linkage='complete').fit_predict(1 - sim_matrix)
         labels = get_match(cluster_labels)
         cluster_cid_tids = get_cid_tid(labels,sub_cid_tids[sub_c_to_c])
@@ -127,7 +127,7 @@ def get_labels(_cfg, cid_tid_dict, cid_tids, score_thr):
     # 3rd cluster
     # cid_tid_dict_new = combin_feature(cid_tid_dict,sub_cluster)
     # sim_matrix = get_sim_matrix(_cfg,cid_tid_dict_new, cid_tids)
-    # cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1 - 0.2, affinity='precomputed',
+    # cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1 - 0.2, metric='precomputed',
     #                                          linkage='complete').fit_predict(1 - sim_matrix)
     # labels = get_match(cluster_labels)
     return labels

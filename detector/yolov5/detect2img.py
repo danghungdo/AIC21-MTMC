@@ -224,7 +224,7 @@ if __name__ == '__main__':
     opt.source = f'{cfg.DET_SOURCE_DIR}/{opt.name}/img1/'
     opt.project = cfg.DATA_DIR
     print(opt)
-    check_requirements()
+    # check_requirements()  # disabled: env uses opencv-python-headless; check is a no-op assertion
 
     with torch.no_grad():
         if opt.update:  # update all models (to fix SourceChangeWarning)

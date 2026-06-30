@@ -53,7 +53,7 @@ def get_match(cluster_labels):
 
 def get_labels(_cfg,cid_tid_dict, cid_tids, score_thr):
     sim_matrix = get_sim_matrix(_cfg,cid_tid_dict,cid_tids)
-    cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-score_thr, affinity='precomputed',
+    cluster_labels = AgglomerativeClustering(n_clusters=None, distance_threshold=1-score_thr, metric='precomputed',
                             linkage='average').fit_predict(sim_matrix)
                             # linkage='complete').fit_predict(sim_matrix)
     labels = get_match(cluster_labels)

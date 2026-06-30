@@ -1,0 +1,12 @@
+# S02 (validation) full-pipeline config: detection + MOT + final results.
+# Appearance-only cross-camera matching (no S06 zone masks). New leak-free ReID model.
+CHALLENGE_DATA_DIR: '/home/likef/workspace/city-flow-raw/cityflow-raw-data/validation-002/validation/'
+DET_SOURCE_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detection/images/test/S02/'
+DATA_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/detect_merge_s02/'
+REID_SIZE_TEST: [384, 384]
+ROI_DIR: '/home/likef/workspace/city-flow-raw/cityflow-raw-data/validation-002/validation/S02/'
+CID_BIAS_DIR: '/home/likef/workspace/AIC21-MTMC/datasets/cam_timestamp/'
+USE_RERANK: True
+USE_FF: True
+SCORE_THR: 0.1
+MCMT_OUTPUT_TXT: 'track_s02.txt'

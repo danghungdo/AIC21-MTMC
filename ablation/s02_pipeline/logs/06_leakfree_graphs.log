@@ -1,0 +1,8 @@
+=== building leak-free val graphs ===
+2229 tracklets ((id,cam) groups) from ../../datasets/siam/crops/val
+abs path is /home/likef/workspace/AIC21-MTMC/reid/reid_inference/reid_model.py
+===========ResNet===========
+using resnet101_ibn_a as a backbone
+Loading pretrained model from ../../reid/reid_model/resnet101_ibn_a_80.pth
+saved 2229 tracklet graphs (482 identities, 482 seen in >=2 cameras) -> ../../datasets/siam/graphs_val_leakfree.pkl
+=== GRAPHS DONE ===

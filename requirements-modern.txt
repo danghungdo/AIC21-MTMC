@@ -1,0 +1,50 @@
+# Modern dependency set for the MTMC pipeline (verified working).
+# Python 3.10, single-GPU CUDA 12.1.  See RUN_GUIDE.md for full context.
+#
+# NOTE on PyTorch: torch/torchvision below are CUDA 12.1 (+cu121) builds.
+# Install them FIRST from the CUDA index, then `pip install -r requirements-modern.txt`:
+#
+#   pip install torch==2.2.2 torchvision==0.17.2 --index-url https://download.pytorch.org/whl/cu121
+#   pip install -r requirements-modern.txt
+#
+# Pins below are the exact versions used for the successful run.
+# Keep numpy at 1.23.x — numba / cython-bbox in this set require <1.25.
+
+# --- core / config ---
+numpy==1.23.5
+scipy==1.15.3
+PyYAML==6.0.3
+yacs==0.1.8                 # config loader (config/defaults.py)
+easydict==1.13
+setuptools<81               # restores pkg_resources (yolov5 check_requirements)
+requests==2.34.2            # yolov5 models/common.py
+Cython==3.2.5
+
+# --- imaging / IO (headless: no libGL needed) ---
+opencv-python-headless==4.8.1.78
+Pillow==12.2.0
+
+# --- detector (yolov5) ---
+# torch / torchvision installed separately (see header)
+thop==0.1.1.post2209072238
+seaborn==0.13.2
+tensorboard==2.20.0
+pycocotools==2.0.11
+matplotlib==3.10.9
+tqdm==4.67.3
+
+# --- ReID ---
+timm==1.0.27
+
+# --- MOT (tracker/MOTBaseline) ---
+numba==0.65.1
+llvmlite==0.47.0
+lap==0.5.13
+cython-bbox==0.1.5
+natsort==8.4.0
+motmetrics==1.4.0
+pandas==2.3.3
+
+# --- cross-camera matching ---
+scikit-learn==1.7.2         # NOTE: AgglomerativeClustering uses metric= (not affinity=)
+                            # -> see code patches in RUN_GUIDE.md §2.3

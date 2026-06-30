@@ -14,7 +14,7 @@ def merge_feat(_cfg):
     """Save feature."""
 
     # NOTE: modify the ensemble list here
-    ensemble_list = ['detect_reid1', 'detect_reid2', 'detect_reid3']
+    ensemble_list = ['detect_reid1', 'detect_reid2', 'detect_reid3']  # 3-model ensemble (faithful baseline)
     all_feat_dir = _cfg.DATA_DIR.split('detect')[0]
 
     for cam in ['c041', 'c042', 'c043', 'c044', 'c045', 'c046']:

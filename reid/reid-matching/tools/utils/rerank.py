@@ -1,6 +1,6 @@
 import numpy as np
 import os
-import scipy.misc
+# import scipy.misc  # removed in modern scipy; unused here
 from glob import glob
 from PIL import Image
 import sys
